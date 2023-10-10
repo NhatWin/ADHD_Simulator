@@ -1,8 +1,10 @@
 let COUNTDOWN_TIME = 300;
+let QUESTION_TRACKER = 0;
 
 const countdownSpan = document.querySelector("#countdown");
 const closeTest = document.querySelector("#test");
 const finTest = document.querySelector("#end")
+const displayInteruption = document.querySelector("interuption")
 
 // Popup
 const openModalButtons = document.querySelectorAll('[data-modal-target]')
@@ -51,17 +53,31 @@ function countDown() {
       closeTest.style.setProperty("display", "none");
       finTest.style.setProperty("display", "block");
     }
-  }, 300);
+  }, 3000);
+}
+
+function questionTimer() {
+  let INTERUPTION_INTERVAL = 20;
+  const countDownInterval = setInterval(function() {
+    INTERUPTION_INTERVAL--;
+    if(INTERUPTION_INTERVAL <0 ) {
+      clearInterval(countDownInterval);
+    }
+    if(INTERUPTION_INTERVAL <=0) {
+      openModal(modal)
+    }
+  },3000);
 }
 
 countDown();
-openModal(modal)
+questionTimer()
 
 closeModalButtons.addEventListener("submit", function(event){
   event.preventDefault();
   const answer = event.target.answer.value.toLowerCase()
-  if(answer === questions[0].answer) {
+  if(answer === questions[QUESTION_TRACKER].answer) {
     closeModal(modal)
+    questionTimer()
   }else {
     alert("Wrong answer guess again")
   }
