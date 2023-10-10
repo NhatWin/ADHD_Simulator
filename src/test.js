@@ -17,24 +17,25 @@ const question1= {
 }
 
 const question2= {
-  q: "",
-  answer: ""
+  q: "You just remembered an economics report stating the US had the highest grossing GDP this year and made you wonder who was the second.",
+  answer: "china"
 }
 
 const question3= {
-  q: "You forgot to do today's world. Do that before you continue COPY LINK FOR WORDLE>>> https://wordlearchive.com/50 ",
+  q: "You forgot to do today's world. Do that before you continue >>> https://wordlearchive.com/50 ",
   answer: "maxim"
 }
 
 const question4= {
-  q: "You got board of reading and decided to take a break by playing a game of chess. what is the best move in chess notation",
-  img:"./chess.png",
-  answer: "qxh7"
+  q: "You got board of reading and decided to take a break by playing a game of chess. what is the best move in chess notation for white",
+  img:"./Bb5#.png",
+  answer: "bb5#"
 }
 
 const question5= {
-  q: "",
-  answer: ""
+  q: "You want to play another chess game. What is the best move in chess notation for black",
+  img: "./Qd3#.png",
+  answer: "qd3#"
 }
 
 let questions = [question1,question2,question3,question4,question5]
