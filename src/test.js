@@ -1,10 +1,10 @@
-let COUNTDOWN_TIME = 300;
+let COUNTDOWN_TIME = 180;
 let QUESTION_TRACKER = 0;
 
 const countdownSpan = document.querySelector("#countdown");
 const closeTest = document.querySelector("#test");
 const finTest = document.querySelector("#end")
-const displayInteruption = document.querySelector("interuption")
+const displayInteruption = document.querySelector("h3")
 
 // Popup
 const openModalButtons = document.querySelectorAll('[data-modal-target]')
@@ -22,14 +22,14 @@ const question2= {
 }
 
 const question3= {
-  q: "You forgot to do today's world. Do that before you continue https://wordlearchive.com/50",
+  q: "You forgot to do today's world. Do that before you continue COPY LINK FOR WORDLE>>> https://wordlearchive.com/50 ",
   answer: "maxim"
 }
 
 const question4= {
   q: "You got board of reading and decided to take a break by playing a game of chess. what is the best move in chess notation",
   img:"./chess.png",
-  answer: "Qxh7#"
+  answer: "qxh7"
 }
 
 const question5= {
@@ -39,6 +39,7 @@ const question5= {
 
 let questions = [question1,question2,question3,question4,question5]
 
+displayInteruption.append(questions[QUESTION_TRACKER].q)
 
 // Timer
 function countDown() {
@@ -53,11 +54,11 @@ function countDown() {
       closeTest.style.setProperty("display", "none");
       finTest.style.setProperty("display", "block");
     }
-  }, 3000);
+  }, 1000);
 }
 
 function questionTimer() {
-  let INTERUPTION_INTERVAL = 20;
+  let INTERUPTION_INTERVAL = 15;
   const countDownInterval = setInterval(function() {
     INTERUPTION_INTERVAL--;
     if(INTERUPTION_INTERVAL <0 ) {
@@ -66,7 +67,7 @@ function questionTimer() {
     if(INTERUPTION_INTERVAL <=0) {
       openModal(modal)
     }
-  },3000);
+  },1000);
 }
 
 countDown();
@@ -77,6 +78,9 @@ closeModalButtons.addEventListener("submit", function(event){
   const answer = event.target.answer.value.toLowerCase()
   if(answer === questions[QUESTION_TRACKER].answer) {
     closeModal(modal)
+    QUESTION_TRACKER++
+    console.log(QUESTION_TRACKER)
+    displayInteruption.textContent = questions[QUESTION_TRACKER].q
     questionTimer()
   }else {
     alert("Wrong answer guess again")
