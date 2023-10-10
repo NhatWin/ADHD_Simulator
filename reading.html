@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="https://unpkg.com/modern-normalize@1.1.0/modern-normalize.css" />
+    <link rel="stylesheet" href="./src/style.css" />
+    <title>ADHD Simulator</title>
+  </head>
+  <body>
+    <!--test-->
+    <div id ="test">
+      <header>
+        <h2></h2>
+        <seciton class="headerSection">
+          <p class="timer">time: <span id="countdown">300</span></p>
+        </seciton>
+      </header>
+      <div class="modal" id="modal">
+        <div class="modal-header">
+          <div class="title">
+            You are curious what year Lord of the Flies came out and can't start reading until you know.
+          </div>
+
+        </div>
+        <div class="modal-body">
+          <form id="form">
+            <label for="answer">Your Answer</label>
+            <input type="text" id="answer">
+            <button type="submit" id="submit">Enter</button>
+          </form>
+        </div>
+      </div>
+      <div id="overlay"></div>
+    </div>
+    <div id="end">
+      <p1>hello world</p1>
+    </div>
+
+    <script src="./src/test.js"></script>
+  </body>
+</html>
