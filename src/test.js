@@ -3,8 +3,10 @@ let QUESTION_TRACKER = 0;
 
 const countdownSpan = document.querySelector("#countdown");
 const closeTest = document.querySelector("#test");
-const finTest = document.querySelector("#end")
-const displayInteruption = document.querySelector("h3")
+const closeStart = document.querySelector("#start");
+const finTest = document.querySelector("#end");
+const displayInteruption = document.querySelector("h3");
+const startTest = document.querySelector("#startTest");
 
 // Popup
 const openModalButtons = document.querySelectorAll('[data-modal-target]')
@@ -71,8 +73,12 @@ function questionTimer() {
   },1000);
 }
 
-countDown();
-questionTimer()
+startTest.addEventListener("click", function(event){
+  closeStart.style.setProperty("display", "none");
+  closeTest.style.setProperty("display", "block");
+  countDown();
+questionTimer();
+})
 
 closeModalButtons.addEventListener("submit", function(event){
   event.preventDefault();

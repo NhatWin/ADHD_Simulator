@@ -5,6 +5,10 @@
   font-size: 40px;
 }
 
+#test {
+  display: none;
+}
+
 *, *::after, *::before {
   box-sizing: border-box;
 }
