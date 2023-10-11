@@ -7,6 +7,7 @@ const closeStart = document.querySelector("#start");
 const finTest = document.querySelector("#end");
 const displayInteruption = document.querySelector("h3");
 const startTest = document.querySelector("#startTest");
+const puzzle = document.querySelector("#chess")
 
 // Popup
 const openModalButtons = document.querySelectorAll('[data-modal-target]')
@@ -29,18 +30,23 @@ const question3= {
 }
 
 const question4= {
-  q: "You got board of reading and decided to take a break by playing a game of chess. what is the best move in chess notation for white",
-  img:"./Bb5#.png",
+  q: "You got board of reading and decided to take a break by playing a game of chess. what is the best move in chess notation for white? (ex: Rd4#)",
+  img:"./chess1.png",
   answer: "bb5#"
 }
 
 const question5= {
-  q: "You want to play another chess game. What is the best move in chess notation for black",
-  img: "./Qd3#.png",
+  q: "You want to play another chess game. What is the best move in chess notation for black? (ex: Rd4#)",
+  img: "./chess2.png",
   answer: "qd3#"
 }
 
-let questions = [question1,question2,question3,question4,question5]
+const question6= {
+  q: "test question",
+  answer: "1"
+}
+
+let questions = [question1,question2,question3,question4,question5,question6]
 
 displayInteruption.append(questions[QUESTION_TRACKER].q)
 
@@ -56,6 +62,7 @@ function countDown() {
     if (COUNTDOWN_TIME <= 0) {
       closeTest.style.setProperty("display", "none");
       finTest.style.setProperty("display", "block");
+      closeModal(modal)
     }
   }, 1000);
 }
@@ -70,14 +77,14 @@ function questionTimer() {
     if(INTERUPTION_INTERVAL <=0) {
       openModal(modal)
     }
-  },1000);
+  },100);
 }
 
 startTest.addEventListener("click", function(event){
   closeStart.style.setProperty("display", "none");
   closeTest.style.setProperty("display", "block");
   countDown();
-questionTimer();
+  questionTimer();
 })
 
 closeModalButtons.addEventListener("submit", function(event){
@@ -86,8 +93,12 @@ closeModalButtons.addEventListener("submit", function(event){
   if(answer === questions[QUESTION_TRACKER].answer) {
     closeModal(modal)
     QUESTION_TRACKER++
-    console.log(QUESTION_TRACKER)
     displayInteruption.textContent = questions[QUESTION_TRACKER].q
+    if(questions[QUESTION_TRACKER].img != null){
+      puzzle.src = questions[QUESTION_TRACKER].img
+    } else {
+      puzzle.src = ""
+    }
     questionTimer()
   }else {
     alert("Wrong answer guess again")
