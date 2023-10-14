@@ -16,29 +16,29 @@ const closeModalButtons = document.querySelector('#form')
 //Questions
 const question1= {
   q: "You wonder which ocean the story takes place in. Look it up. ",
-  answer: "Pacific Ocean"
+  answer:"pacific ocean"
 }
 
 const question2= {
   q: "You just remembered an economics report stating the US had the highest grossing GDP this year and made you wonder who was the second.",
-  answer: "china"
+  answer:"china"
 }
 
 const question3= {
   q: "You forgot to do today's world. Do that before you continue >>> https://wordlearchive.com/50 ",
-  answer: "maxim"
+  answer:"maxim"
 }
 
 const question4= {
   q: "You got board of reading and decided to take a break by playing a game of chess. what is the best move in chess notation for white? (ex: Rd4#)",
   img:"./chess1.png",
-  answer: "bb5#"
+  answer:"bb5#"
 }
 
 const question5= {
   q: "You want to play another chess game. What is the best move in chess notation for black? (ex: Rd4#)",
   img: "./chess2.png",
-  answer: "qd3#"
+  answer:"qd3#"
 }
 
 const question6= {
@@ -84,11 +84,11 @@ function countDown() {
       finTest.style.setProperty("display", "block");
       closeModal(modal)
     }
-  }, 1000);
+  }, 10);
 }
 
 function questionTimer() {
-  let INTERUPTION_INTERVAL = 10;
+  let INTERUPTION_INTERVAL = 7;
   const countDownInterval = setInterval(function() {
     INTERUPTION_INTERVAL--;
     if(INTERUPTION_INTERVAL <0 ) {
