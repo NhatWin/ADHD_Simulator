@@ -84,7 +84,7 @@ function countDown() {
       finTest.style.setProperty("display", "block");
       closeModal(modal)
     }
-  }, 10);
+  }, 1000);
 }
 
 function questionTimer() {
