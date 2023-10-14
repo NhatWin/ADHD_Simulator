@@ -15,8 +15,8 @@ const closeModalButtons = document.querySelector('#form')
 
 //Questions
 const question1= {
-  q: "You are curious what year Lord of the Flies came out and can't start reading until you know.",
-  answer: "1954"
+  q: "You wonder which ocean the story takes place in. Look it up. ",
+  answer: "Pacific Ocean"
 }
 
 const question2= {
@@ -42,11 +42,31 @@ const question5= {
 }
 
 const question6= {
-  q: "test question",
-  answer: "1"
+  q: "you just remembered that you wanted to buy a lego set after school but not sure how much it cost. What's the cost for Venator-Class Republic Attack Cruiser lego set in USD?",
+  answer: "$649.99"
 }
 
-let questions = [question1,question2,question3,question4,question5,question6]
+const question7= {
+  q:"You forgot to do your math homework and decide to do it now. Solve for t. 16 - 2t = 5t + 9",
+  answer:"1"
+}
+
+const question8= {
+  q:"You are getting sick of reading and flip ahead to see how much more you have to read. What is the title for chapter 2?",
+  answer:"Fire on the Mountain"
+}
+
+const question9= {
+  q:"You are curious what year Lord of the Flies came out and can't start reading until you know.",
+  answer:"1954"
+}
+
+const question10= {
+  q:"The story is making you think what the likely hood of a plane crash is. Give the number in % for the past 20 years.",
+  answer:"5.3%"
+}
+
+let questions = [question1,question2,question3,question4,question5,question6,question7,question8,question9,question10]
 
 displayInteruption.append(questions[QUESTION_TRACKER].q)
 
@@ -68,7 +88,7 @@ function countDown() {
 }
 
 function questionTimer() {
-  let INTERUPTION_INTERVAL = 15;
+  let INTERUPTION_INTERVAL = 10;
   const countDownInterval = setInterval(function() {
     INTERUPTION_INTERVAL--;
     if(INTERUPTION_INTERVAL <0 ) {
@@ -77,7 +97,7 @@ function questionTimer() {
     if(INTERUPTION_INTERVAL <=0) {
       openModal(modal)
     }
-  },100);
+  },1000);
 }
 
 startTest.addEventListener("click", function(event){
