@@ -25,7 +25,7 @@ const question2= {
 }
 
 const question3= {
-  q: "You forgot to do today's world. Do that before you continue >>> https://wordlearchive.com/50 ",
+  q: "You forgot to do today's Wordl. Do that before you continue >>> https://wordlearchive.com/50 ",
   answer:"maxim"
 }
 
