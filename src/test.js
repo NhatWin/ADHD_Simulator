@@ -25,7 +25,7 @@ const question2= {
 }
 
 const question3= {
-  q: "You forgot to do today's Wordl. Do that before you continue ",
+  q: "You forgot to do today's Wordle. Do that before you continue. ",
   answer:"grail"
 }
 
