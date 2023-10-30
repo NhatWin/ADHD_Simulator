@@ -1,8 +1,10 @@
 # ADHD simulator
 
->> Instalation
+## Instalation
   N/A
->> Usage
+  
+## Usage
  Site made for class project.
->> Credit
+ 
+## Credit
   N/A
